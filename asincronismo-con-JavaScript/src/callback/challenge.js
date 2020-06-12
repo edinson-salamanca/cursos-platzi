@@ -1,14 +1,14 @@
 //dependencia que nos permite hacer peticiones a servicios de la nube
-let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 //url del API rickandmory
-let API = 'https://rickandmortyapi.com/api/character/';
+let API = "https://rickandmortyapi.com/api/character/";
 
 /**
  * función que nos permite enviar y recibir peticiones a API
- * @param {String} url_api 
- * @param {Function} callback 
- * 
+ * @param {String} url_api
+ * @param {Function} callback
+ *
  */
 function fetchData(url_api, callback) {
   //Creamos una instancia del objeto XMLHttpRequest
@@ -20,7 +20,7 @@ function fetchData(url_api, callback) {
    * url_api es la url, aquien le haremos la petición
    * true para que la petición sea asincrona
    */
-  xhtp.open('GET', url_api, true);
+  xhtp.open("GET", url_api, true);
 
   //declaramos un listener que se ejecutará si ocurre algún cambio en el estado inicial
   xhtp.onreadystatechange = function (event) {
@@ -33,9 +33,8 @@ function fetchData(url_api, callback) {
      * 4: solicitud finalizada y la respuesta está lista
      */
     if (xhtp.readyState === 4) {
-
       /**
-       * que estatus tine la petición, en este caso 200 siginifica que ok todo salio bien 
+       * que estatus tine la petición, en este caso 200 siginifica que ok todo salio bien
        */
       if (xhtp.status === 200) {
         callback(null, JSON.parse(xhtp.responseText));
