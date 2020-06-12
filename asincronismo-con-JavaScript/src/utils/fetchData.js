@@ -4,8 +4,8 @@ let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 
 /**
- * función que nos permite enviar y recibir peticiones a API
- * @param {String} url_api
+ * función que nos permite enviar y recibir peticiones a una API
+ * @param {String} url_api url del api a consultar
  *
  *
  */
