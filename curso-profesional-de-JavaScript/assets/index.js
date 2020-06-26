@@ -13,10 +13,10 @@ button.onclick = () => {
 
 btnMute.onclick = () => {
   if (video.muted) {
-    btnMute.textContent = "Unmute";
+    btnMute.textContent = "Mute";
     player.unmute();
   } else {
-    btnMute.textContent = "Mute";
+    btnMute.textContent = "Unmute";
     player.mute();
   }
   // video.muted ? player.unmute() : player.mute();
