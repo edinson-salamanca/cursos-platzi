@@ -23,3 +23,10 @@ muteButton.onclick = () => {
   }
   // video.muted ? player.unmute() : player.mute();
 };
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/sw.js')
+    .catch((error) => console.error(error));
+}
+console.log('hola');
