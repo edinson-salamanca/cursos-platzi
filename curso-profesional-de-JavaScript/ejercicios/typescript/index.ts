@@ -35,3 +35,27 @@ comdin = { type: 'Wildcard' };
 
 //Object
 let someObject = { type: 'Wildcard' };
+
+//funciones
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+const sum = add(2, 3);
+
+//regresa funciones
+
+function createAdder(a: number): (number) => number {
+  return function (b: number) {
+    return a + b;
+  };
+}
+const addFour = createAdder(4);
+const foutPlus = addFour(6);
+
+//Funciones con parametros opcionales
+function fullName(firstName: string, lastName?: string): string {
+  return `${firstName}${lastName}`;
+}
+
+const edin = fullName('Edin');
