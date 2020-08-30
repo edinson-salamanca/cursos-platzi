@@ -12,7 +12,8 @@
   "author": "Edinson Salamanca <sennin7k@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.0.2"
   },
   "browserslist": [
     "last 1 Chrome version"
