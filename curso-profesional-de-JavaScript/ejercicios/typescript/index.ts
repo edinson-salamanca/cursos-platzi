@@ -59,3 +59,28 @@ function fullName(firstName: string, lastName?: string): string {
 }
 
 const edin = fullName('Edin');
+
+//interfaces
+
+interface Rectangulo {
+  ancho: number;
+  alto: number;
+  color: Color;
+}
+let rect: Rectangulo = {
+  alto: 4,
+  ancho: 6,
+  color: Color.Azul
+};
+
+function area(r: Rectangulo) {
+  return r.alto * r.ancho;
+}
+
+const areaRect = area(rect);
+console.log(areaRect);
+
+rect.toString = function () {
+  return `Un rectangulo ${this.color}`;
+};
+console.log(rect.toString());
