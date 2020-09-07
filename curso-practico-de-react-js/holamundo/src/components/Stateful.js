@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+/**
+ * los stateful maneja ciclo de vida y estados
+ */
 class Stateful extends Component {
   constructor(props) {
     super(props);
