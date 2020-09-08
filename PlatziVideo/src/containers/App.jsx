@@ -5,32 +5,43 @@ import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import Footer from '../components/Footer';
+import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
+const API = 'http://localhost:3000/initalState';
+
 const App = () => {
-  return (
+  const initialState = useInitialState(API);
+
+  return initialState.length === 0 ? (
+    <h1>Loading...</h1>
+  ) : (
     <div className='app'>
       <Header />
       <Search />
-
-      <Categories tittle='Mi lista'>
-        <Carousel>
-          <CarouselItem />
-          <CarouselItem />
-          <CarouselItem />
-        </Carousel>
-      </Categories>
+      {initialState.mylist.length > 0 && (
+        <Categories tittle='Mi lista'>
+          <Carousel>
+            {initialState.mylist.map((item) => (
+              <CarouselItem key={item.id} {...item} />
+            ))}
+          </Carousel>
+        </Categories>
+      )}
 
       <Categories tittle='Tendencias'>
         <Carousel>
-          <CarouselItem />
-          <CarouselItem />
+          {initialState.trends.map((item) => (
+            <CarouselItem key={item.id} {...item} />
+          ))}
         </Carousel>
       </Categories>
 
       <Categories tittle='Originales de platzi Video'>
         <Carousel>
-          <CarouselItem />
+          {initialState.originals.map((item) => (
+            <CarouselItem key={item.id} {...item} />
+          ))}
         </Carousel>
       </Categories>
 
