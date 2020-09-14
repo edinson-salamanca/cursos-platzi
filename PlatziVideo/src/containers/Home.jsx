@@ -22,6 +22,7 @@ const Home = ({ myList, trends, originals }) => {
                 year={item.year}
                 contentRating={item.contentRating}
                 duration={item.duration}
+                isList
               />
             ))}
           </Carousel>
