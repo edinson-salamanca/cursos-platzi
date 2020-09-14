@@ -16,6 +16,7 @@ const Home = ({ myList, trends, originals }) => {
             {myList.map((item) => (
               <CarouselItem
                 key={item.id}
+                id={item.id}
                 cover={item.cover}
                 title={item.title}
                 year={item.year}
@@ -32,6 +33,7 @@ const Home = ({ myList, trends, originals }) => {
           {trends.map((item) => (
             <CarouselItem
               key={item.id}
+              id={item.id}
               cover={item.cover}
               title={item.title}
               year={item.year}
@@ -47,6 +49,7 @@ const Home = ({ myList, trends, originals }) => {
           {originals.map((item) => (
             <CarouselItem
               key={item.id}
+              id={item.id}
               cover={item.cover}
               title={item.title}
               year={item.year}
