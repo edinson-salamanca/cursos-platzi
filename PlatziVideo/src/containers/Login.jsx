@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loginRequest } from '../actions';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 import '../assets/styles/components/Login.scss';
 
-const Login = () => {
+const Login = (props) => {
   const [form, setValues] = useState({
     email: '',
   });
@@ -18,7 +20,17 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.loginRequest(form);
+    /**
+     * history no pemite movernos hacia donde sea
+     * necesario según nuestro comportamiento de la app.
+     *
+     * History lo obtenemos de las props, el cual esta
+     * disponible ya que estamos encapsulando toda la app
+     * en BrowserRouter el cual es el encargado de manejar
+     * todo el flujo de la ruta y todo el flujo de la app
+     */
+    props.history.push('/');
   };
 
   return (
@@ -70,4 +82,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispatchToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispatchToProps)(Login);
