@@ -7,6 +7,7 @@ import App from './routes/App';
 
 const initialState = {
   user: {},
+  search: [],
   playing: {},
   myList: [],
   trends: [
@@ -170,8 +171,7 @@ const initialState = {
     },
   ],
 };
-const composeEnhancers =
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, initialState, composeEnhancers());
 
 ReactDOM.render(
@@ -180,5 +180,5 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('app'),
+  document.getElementById('app')
 );

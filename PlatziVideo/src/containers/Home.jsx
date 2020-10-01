@@ -13,7 +13,7 @@ const Home = ({ myList, trends, originals }) => {
       <Header />
       <Search isHome />
       {myList.length > 0 && (
-        <Categories tittle='Mi lista'>
+        <Categories title='Mi lista'>
           <Carousel>
             {myList.map((item) => (
               <CarouselItem
@@ -31,7 +31,7 @@ const Home = ({ myList, trends, originals }) => {
         </Categories>
       )}
 
-      <Categories tittle='Tendencias'>
+      <Categories title='Tendencias'>
         <Carousel>
           {trends.map((item) => (
             <CarouselItem
@@ -47,7 +47,7 @@ const Home = ({ myList, trends, originals }) => {
         </Carousel>
       </Categories>
 
-      <Categories tittle='Originales de platzi Video'>
+      <Categories title='Originales de platzi Video'>
         <Carousel>
           {originals.map((item) => (
             <CarouselItem
